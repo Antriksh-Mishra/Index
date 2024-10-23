@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Ideas</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2980b9;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Submit Your Ideas</h1>
+    <p>Your thoughts can help reduce food wastage!</p>
+</header>
+
+<main>
+    <h2>We Want to Hear from You!</h2>
+    <form id="ideaForm" onsubmit="submitIdea(event)">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="idea">Your Idea:</label>
+        <textarea id="idea" name="idea" rows="5" required></textarea>
+
+        <button type="submit">Submit Idea</button>
+    </form>
+</main>
+
+<script>
+    function submitIdea(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const idea = document.getElementById("idea").value;
+
+        // Here, you can handle the form data, e.g., send it to a server or process it
+        alert(`Thank you, ${name}! Your idea has been submitted.\nEmail: ${email}\nIdea: ${idea}`);
+
+        // Reset the form
+        document.getElementById("ideaForm").reset();
+    }
+</script>
+
+</body>
+</html>
